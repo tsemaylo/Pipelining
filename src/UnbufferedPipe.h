@@ -17,14 +17,14 @@
 #include "Pipe.h"
 
 /**
- * Class UnbufferedPipe represents unbuffered data transition from input (feed)
+ * Class UnbufferedPipe represents trivial unbuffered data transition from input (feed)
  * to the next procession step (sink).
  */
-class UnbufferedPipe : public Pipe{
+class UnbufferedPipe : public Pipe {
 public:
     UnbufferedPipe(Operation &);
     virtual ~UnbufferedPipe();
-    
+
     void feed(const ByteVector &data) final;
     void wait() final;
 

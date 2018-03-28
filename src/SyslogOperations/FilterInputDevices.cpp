@@ -3,7 +3,7 @@
  */
 
 /**
- * @file FilterInputDevices.h
+ * @file FilterInputDevices.cpp
  *
  * Implementation of FilterInputDevices class.
  *
@@ -16,7 +16,7 @@
 
 ByteVector FilterInputDevices::apply(const ByteVector& data) {
     std::string str(data.begin(), data.end());
-    if(std::string::npos == str.find("input:")) {
+    if (std::string::npos == str.find("input:")) {
         return ByteVector();
     }
     return ByteVector(data);

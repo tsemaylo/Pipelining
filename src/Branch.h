@@ -19,7 +19,7 @@
 #include "Pipe.h"
 
 /**
- * Branch class provides the possibility to split pipeline into two parallel procession 
+ * Branch class provides the possibility to split pipeline into two (parallel) procession 
  * pipelines and then merge the results into output sink.
  */
 class Branch : public Pipe {
@@ -56,8 +56,8 @@ public:
 
 
 private:
-    Pipe *branch1=0l;
-    Pipe *branch2=0l;
+    Pipe *branch1 = 0l;
+    Pipe *branch2 = 0l;
 
     std::function<bool (const ByteVector &) > conditionBranch1 = [](const ByteVector &) {
         return true;

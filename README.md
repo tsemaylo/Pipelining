@@ -20,11 +20,17 @@ Operations to be performed:
 
 # Build
 
-Standard build procedure for CMake can be applied here.
+Standard build procedure for CMake can be applied here. The GNU C++ compiler with 
+support of C++14 is used.
 
-Although it is better to use build.sh script.
+It can be convinient to use build.sh script, which will build, optionall test and install 
+binaries into /tmp/pipelining/ directory.
 
-The following environment variables for build.sh script can be used to customize
+```
+./build.sh
+```
+
+The following environment variables for build.sh script can be used to enable
 testing procedures:
 
 ```
@@ -36,7 +42,7 @@ export DO_VALGRIND_TEST=1 # perform Valgrind memory checks for unit tests.
 
 Run in your command shell
 ```
-cat test/test.log | /tmp/pipelining/pipeline
+cat test/test.log | /tmp/pipelining/bin/pipeline
 ```
 
 # Technical details
@@ -56,3 +62,26 @@ a pipe type (against Pipe interface) directly in code.
 The figure below depicts the composition of Pipe-Operation design.
 
 ![Pipeline](composition.png)
+
+## Alternative design options
+
+There was a few other approaches to model the problem
+
+1. Do it in a streaming fashion with overloading "operator>>"
+
+This option was rejected because of:
+* The lack of experience to build more or less clear and stable API.
+* All the beauty of streaming opeartors disappears in advent of parallel flows, branching and so on.
+
+2. Build it using templates.
+
+The major reasons for this approach were
+* Undestructable typization
+* "True" compile-time construction of pipeline
+* Being flexible with types of inputs and outputs of Operation. This means literarly using different types but not just an awkward BytesVector.
+
+Problem with it: when the number of template arguments for Pipe exceeds 2 it becomes way more difficult to specify the topology. 
+The reasoning about code and pipeline structure becomes more difficult with increasing number of steps.
+
+Nevertheless I find it deserving a bit more attention later. For this reason draft 
+version of it was located here [misc/TempleteComcept.cpp](misc/TempleteConcept.cpp).

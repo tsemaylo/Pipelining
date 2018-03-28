@@ -19,18 +19,17 @@ UnbufferedPipe::UnbufferedPipe(Operation &_op) : Pipe(_op) {
 }
 
 void UnbufferedPipe::feed(const ByteVector &data) {
-    ByteVector res=operation.apply(data);
-    if(this->next != 0l) {
+    ByteVector res = operation.apply(data);
+    if (this->next != 0l) {
         this->next->feed(res);
     }
 }
 
 void UnbufferedPipe::wait() {
-    if(this->next != 0l) {
+    if (this->next != 0l) {
         this->next->wait();
     }
 }
-
 
 UnbufferedPipe::~UnbufferedPipe() {
 

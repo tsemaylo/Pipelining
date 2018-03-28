@@ -19,6 +19,9 @@
 /**
  * The purpose of the Reformat class is to reformat the syslog string into the 
  * following format: Device_Name | Device_Location
+ * 
+ * The input string has the form:
+ * <random text> input: <device name> as <device location>
  */
 class Reformat : public Operation {
 public:

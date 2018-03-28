@@ -3,7 +3,7 @@
  */
 
 /**
- * @file Reformat.h
+ * @file Reformat.cpp
  *
  * Implementation of Reformat class.
  *
@@ -15,8 +15,8 @@
 
 #include <string>
 
-static const std::string INPUT = "input:";
-static const std::string AS = "as";
+static const std::string INPUT = "input: ";
+static const std::string AS = " as ";
 
 ByteVector Reformat::apply(const ByteVector& data) {
     std::string str(data.begin(), data.end());
@@ -25,15 +25,18 @@ ByteVector Reformat::apply(const ByteVector& data) {
         return ByteVector();
     }
     
-    posStart += INPUT.length() + 1;
+    posStart += INPUT.length();
     
     size_t posDelimiter = str.find(AS);
-    posDelimiter -= 1;
+    if(std::string::npos == posDelimiter) {
+        return ByteVector();
+    }
     
     std::string deviceName = str.substr(posStart, posDelimiter - posStart);
-    posDelimiter += AS.length() + 2;
+    posDelimiter += AS.length();
     std::string deviceLocation = str.substr(posDelimiter, str.length() - posDelimiter);
     
+    // TODO can be inefficient, but so far OK
     std::string result = deviceName + " | " + deviceLocation ;
     
     return ByteVector(result.begin(), result.end());

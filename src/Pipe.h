@@ -31,7 +31,7 @@ public:
      */
     Pipe(Operation & _op);
     virtual ~Pipe();
-    
+
     /**
      * Feed the data into pipe.
      * 
@@ -40,7 +40,7 @@ public:
      * @param data   Vector of bytes with data to be processed.
      */
     virtual void feed(const ByteVector &data) = 0;
-    
+
     /**
      * Set the output of the pipe
      * 
@@ -49,16 +49,16 @@ public:
      * @return Pointer to this pipe.
      */
     virtual Pipe *sink(Pipe *next);
-    
+
     /**
      * Wait untill pipeline will finish its work.
      * 
      * Make sense for buffered pipes, because it may take a time to process the whole buffer.
      */
     virtual void wait() = 0;
-    
+
 protected:
-    Operation &operation; 
+    Operation &operation;
     Pipe *next = 0l; // the next step of the pipeline
 };
 

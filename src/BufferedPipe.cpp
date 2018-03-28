@@ -18,19 +18,21 @@
 #include <chrono>
 
 void BufferedPipe::bufferHandling() {
-    while(this->doBufferHandling){
+    while (this->doBufferHandling) {
+        // make a small delay to reduce CPU load
+        // may be considered harmful for hi-performace tasks
         std::this_thread::sleep_for(std::chrono::microseconds(200));
-        
+
         std::lock_guard<std::mutex> guard(this->protectBuffer);
-        
-        if(!this->buffer.empty()) {
+
+        if (!this->buffer.empty()) {
             this->pipeReady = false;
-            
-            ByteVector dataItem=this->buffer.front();
+
+            ByteVector dataItem = this->buffer.front();
             this->buffer.pop_front();
 
             ByteVector dataItemRes = this->operation.apply(dataItem);
-            if(this->next != 0l) {
+            if (this->next != 0l) {
                 this->next->feed(dataItemRes);
             }
             this->pipeReady = true;
@@ -39,10 +41,12 @@ void BufferedPipe::bufferHandling() {
 }
 
 BufferedPipe::BufferedPipe(Operation &_op) : Pipe(_op), doBufferHandling(true), pipeReady(true) {
-    if(this->inBufferMgmt.joinable()){
+    // reset and create handling thread
+    if (this->inBufferMgmt.joinable()) {
         this->inBufferMgmt.join();
     }
-    this->inBufferMgmt=std::thread([this] { this->bufferHandling(); });
+    this->inBufferMgmt = std::thread([this] {
+        this->bufferHandling(); });
 }
 
 void BufferedPipe::feed(const ByteVector &data) {
@@ -51,19 +55,18 @@ void BufferedPipe::feed(const ByteVector &data) {
 }
 
 void BufferedPipe::wait() {
-    while(!(this->buffer.empty() && this->pipeReady)){}
-    if(this->next != 0l){
+    while (!(this->buffer.empty() && this->pipeReady));
+    if (this->next != 0l) {
         this->next->wait();
     }
 }
 
-
 BufferedPipe::~BufferedPipe() {
     // stop thread processing
-    this->doBufferHandling=false;
-    
+    this->doBufferHandling = false;
+
     // join thread
-    if(this->inBufferMgmt.joinable()){
+    if (this->inBufferMgmt.joinable()) {
         this->inBufferMgmt.join();
     }
 }

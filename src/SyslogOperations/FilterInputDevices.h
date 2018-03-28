@@ -19,7 +19,7 @@
 /**
  * Operation to filter out everything that doesnt contsain "input:" substring.
  */
-class FilterInputDevices : public Operation{
+class FilterInputDevices : public Operation {
 public:
     ByteVector apply(const ByteVector& data) final;
     virtual ~FilterInputDevices();

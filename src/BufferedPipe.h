@@ -22,17 +22,20 @@
 
 /**
  * Class BufferedPipe is a Pipe implementation which provides bufferized supply 
- * of operation with data and bufferized output.
+ * of operation with data.
+ * 
+ * Can be seen as parallel pipe. Creates a thread to handle new buffer entries 
+ * "in background".
  */
 class BufferedPipe : public Pipe {
 public:
-    BufferedPipe(Operation &);
+    BufferedPipe(Operation &_op);
 
     void feed(const ByteVector &data) final;
     void wait() final;
-    
+
     virtual ~BufferedPipe();
-    
+
     // since we have sophisticated destructor
     BufferedPipe(const BufferedPipe& other) = delete;
     BufferedPipe(const BufferedPipe&& other) = delete;
@@ -43,8 +46,8 @@ private:
     std::mutex protectBuffer;
     bool doBufferHandling = false;
     std::thread inBufferMgmt;
-    bool pipeReady=true;
-    
+    bool pipeReady = true; // ready stet is set when no entries in buffer and no operations are running
+
     void bufferHandling();
 };
 

@@ -17,6 +17,7 @@
 #include <vector>
 #include <stdint.h>
 
+// shortcut for a vector of bytes
 using ByteVector=std::vector<uint8_t>;
 
 #endif /* BYTEVECTOR_H */
