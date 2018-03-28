@@ -1,0 +1,58 @@
+Mar 27 19:29:50 oleg-pc kernel: [    1.026829] ehci-pci 0000:00:1d.0: EHCI Host Controller
+Mar 27 19:29:50 oleg-pc kernel: [    1.026837] ehci-pci 0000:00:1d.0: new USB bus registered, assigned bus number 1
+Mar 27 19:29:50 oleg-pc kernel: [    1.026849] ehci-pci 0000:00:1d.0: debug port 2
+Mar 27 19:29:50 oleg-pc kernel: [    1.030737] ehci-pci 0000:00:1d.0: cache line size of 64 is not supported
+Mar 27 19:29:50 oleg-pc kernel: [    1.030748] ehci-pci 0000:00:1d.0: irq 23, io mem 0xb3819000
+Mar 27 19:29:50 oleg-pc kernel: [    1.045568] ehci-pci 0000:00:1d.0: USB 2.0 started, EHCI 1.00
+Mar 27 19:29:50 oleg-pc kernel: [    1.046581] ohci-pci: OHCI PCI platform driver
+Mar 27 19:29:50 oleg-pc kernel: [    1.357550] usb 1-1: new high-speed USB device number 2 using ehci-pci
+Mar 27 19:29:50 oleg-pc kernel: [    1.592865] rtsx_pci 0000:01:00.0: rtsx_pci_acquire_irq: pcr->msi_en = 1, pci->irq = 45
+Mar 27 19:29:50 oleg-pc kernel: [    2.221983] input: RAPOO RAPOO 5G Wireless Device as /devices/pci0000:00/0000:00:14.0/usb2/2-3/2-3:1.0/0003:24AE:2003.0001/input/input11
+Mar 27 19:29:50 oleg-pc kernel: [    2.278180] input: RAPOO RAPOO 5G Wireless Device as /devices/pci0000:00/0000:00:14.0/usb2/2-3/2-3:1.1/0003:24AE:2003.0002/input/input12
+Mar 27 19:29:50 oleg-pc kernel: [    3.521347] input: HDA Intel PCH Mic as /devices/pci0000:00/0000:00:1b.0/sound/card1/input16
+Mar 27 19:29:50 oleg-pc kernel: [    3.521426] input: HDA Intel PCH Headphone as /devices/pci0000:00/0000:00:1b.0/sound/card1/input17
+Mar 27 19:29:50 oleg-pc kernel: [    3.522024] input: HDA Intel HDMI HDMI/DP,pcm=3 as /devices/pci0000:00/0000:00:03.0/sound/card0/input18
+Mar 27 19:29:50 oleg-pc kernel: [    3.522100] input: HDA Intel HDMI HDMI/DP,pcm=7 as /devices/pci0000:00/0000:00:03.0/sound/card0/input19
+Mar 27 19:29:50 oleg-pc kernel: [    3.522168] input: HDA Intel HDMI HDMI/DP,pcm=8 as /devices/pci0000:00/0000:00:03.0/sound/card0/input20
+Mar 27 19:29:50 oleg-pc kernel: [    3.584728] input: TOSHIBA Web Camera - HD as /devices/pci0000:00/0000:00:14.0/usb2/2-6/2-6:1.0/input/input21
+Mar 27 18:57:02 oleg-pc kernel: [    3.468671] ehci-pci: EHCI PCI platform driver
+Mar 27 18:57:02 oleg-pc kernel: [    3.488782] ohci-pci: OHCI PCI platform driver
+Mar 27 19:29:50 oleg-pc kernel: [    1.026709] ehci-pci: EHCI PCI platform driver
+Mar 27 19:29:50 oleg-pc kernel: [    1.046581] ohci-pci: OHCI PCI platform driver
+Mar 27 18:57:02 oleg-pc kernel: [    3.464506] input: Power Button as /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0C:00/input/input0
+Mar 27 18:57:02 oleg-pc kernel: [    3.464550] input: Lid Switch as /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0D:00/input/input1
+Mar 27 18:57:02 oleg-pc kernel: [    3.464616] input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input2
+Mar 27 18:57:02 oleg-pc kernel: [    3.524748] input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input3
+Mar 27 18:57:02 oleg-pc kernel: [    4.122849] input: Video Bus as /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A08:00/LNXVIDEO:00/input/input10
+Mar 27 18:57:02 oleg-pc kernel: [    4.667779] input: RAPOO RAPOO 5G Wireless Device as /devices/pci0000:00/0000:00:14.0/usb2/2-3/2-3:1.0/0003:24AE:2003.0001/input/input11
+Mar 27 18:57:02 oleg-pc kernel: [    4.723876] hid-generic 0003:24AE:2003.0001: input,hidraw0: USB HID v1.10 Keyboard [RAPOO RAPOO 5G Wireless Device] on usb-0000:00:14.0-3/input0
+Mar 27 18:57:02 oleg-pc kernel: [    4.724189] input: RAPOO RAPOO 5G Wireless Device as /devices/pci0000:00/0000:00:14.0/usb2/2-3/2-3:1.1/0003:24AE:2003.0002/input/input12
+Mar 27 18:57:02 oleg-pc kernel: [    4.780041] hid-generic 0003:24AE:2003.0002: input,hiddev0,hidraw1: USB HID v1.10 Mouse [RAPOO RAPOO 5G Wireless Device] on usb-0000:00:14.0-3/input1
+Mar 27 18:57:02 oleg-pc kernel: [    4.818686] input: SynPS/2 Synaptics TouchPad as /devices/platform/i8042/serio2/input/input9
+Mar 27 18:57:02 oleg-pc kernel: [    5.940140] input: Toshiba input device as /devices/virtual/input/input15
+Mar 27 18:57:02 oleg-pc kernel: [    6.000674] snd_hda_codec_conexant hdaudioC1D0:    inputs:
+Mar 27 18:57:02 oleg-pc kernel: [    6.004011] input: HDA Intel PCH Mic as /devices/pci0000:00/0000:00:1b.0/sound/card1/input16
+Mar 27 18:57:02 oleg-pc kernel: [    6.004093] input: HDA Intel PCH Headphone as /devices/pci0000:00/0000:00:1b.0/sound/card1/input17
+Mar 27 18:57:02 oleg-pc kernel: [    6.065326] input: TOSHIBA Web Camera - HD as /devices/pci0000:00/0000:00:14.0/usb2/2-6/2-6:1.0/input/input18
+Mar 27 18:57:02 oleg-pc kernel: [    7.072306] input: HDA Intel HDMI HDMI/DP,pcm=3 as /devices/pci0000:00/0000:00:03.0/sound/card0/input19
+Mar 27 18:57:02 oleg-pc kernel: [    7.072362] input: HDA Intel HDMI HDMI/DP,pcm=7 as /devices/pci0000:00/0000:00:03.0/sound/card0/input20
+Mar 27 18:57:02 oleg-pc kernel: [    7.072407] input: HDA Intel HDMI HDMI/DP,pcm=8 as /devices/pci0000:00/0000:00:03.0/sound/card0/input21
+Mar 27 19:29:50 oleg-pc kernel: [    1.022531] input: Power Button as /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0C:00/input/input0
+Mar 27 19:29:50 oleg-pc kernel: [    1.022575] input: Lid Switch as /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0D:00/input/input1
+Mar 27 19:29:50 oleg-pc kernel: [    1.022644] input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input2
+Mar 27 19:29:50 oleg-pc kernel: [    1.085096] input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input3
+Mar 27 19:29:50 oleg-pc kernel: [    1.981804] input: Video Bus as /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A08:00/LNXVIDEO:00/input/input10
+Mar 27 19:29:50 oleg-pc kernel: [    2.221983] input: RAPOO RAPOO 5G Wireless Device as /devices/pci0000:00/0000:00:14.0/usb2/2-3/2-3:1.0/0003:24AE:2003.0001/input/input11
+Mar 27 19:29:50 oleg-pc kernel: [    2.277862] hid-generic 0003:24AE:2003.0001: input,hidraw0: USB HID v1.10 Keyboard [RAPOO RAPOO 5G Wireless Device] on usb-0000:00:14.0-3/input0
+Mar 27 19:29:50 oleg-pc kernel: [    2.278180] input: RAPOO RAPOO 5G Wireless Device as /devices/pci0000:00/0000:00:14.0/usb2/2-3/2-3:1.1/0003:24AE:2003.0002/input/input12
+Mar 27 19:29:50 oleg-pc kernel: [    2.333814] hid-generic 0003:24AE:2003.0002: input,hiddev0,hidraw1: USB HID v1.10 Mouse [RAPOO RAPOO 5G Wireless Device] on usb-0000:00:14.0-3/input1
+Mar 27 19:29:50 oleg-pc kernel: [    2.377256] input: SynPS/2 Synaptics TouchPad as /devices/platform/i8042/serio2/input/input9
+Mar 27 19:29:50 oleg-pc kernel: [    3.452052] input: Toshiba input device as /devices/virtual/input/input15
+Mar 27 19:29:50 oleg-pc kernel: [    3.518104] snd_hda_codec_conexant hdaudioC1D0:    inputs:
+Mar 27 19:29:50 oleg-pc kernel: [    3.521347] input: HDA Intel PCH Mic as /devices/pci0000:00/0000:00:1b.0/sound/card1/input16
+Mar 27 19:29:50 oleg-pc kernel: [    3.521426] input: HDA Intel PCH Headphone as /devices/pci0000:00/0000:00:1b.0/sound/card1/input17
+Mar 27 19:29:50 oleg-pc kernel: [    3.522024] input: HDA Intel HDMI HDMI/DP,pcm=3 as /devices/pci0000:00/0000:00:03.0/sound/card0/input18
+Mar 27 19:29:50 oleg-pc kernel: [    3.522100] input: HDA Intel HDMI HDMI/DP,pcm=7 as /devices/pci0000:00/0000:00:03.0/sound/card0/input19
+Mar 27 19:29:50 oleg-pc kernel: [    3.522168] input: HDA Intel HDMI HDMI/DP,pcm=8 as /devices/pci0000:00/0000:00:03.0/sound/card0/input20
+Mar 27 19:29:50 oleg-pc kernel: [    3.584728] input: TOSHIBA Web Camera - HD as /devices/pci0000:00/0000:00:14.0/usb2/2-6/2-6:1.0/input/input21
+
